@@ -1,12 +1,8 @@
-
-
 //import robocode.Robot;
 import robocode.*;
 //import robocode.ScannedRobotEvent;
 
 import java.awt.*;
-
-
 
 public class Scorpion extends AlphaBot{
 
@@ -67,4 +63,9 @@ public class Scorpion extends AlphaBot{
 		}
 	}
 	
+	public void onHitWall(HitWallEvent e) {
+		double head=getHeading();
+		turnRight(120-(head%90));		
+	}
+			
 }
