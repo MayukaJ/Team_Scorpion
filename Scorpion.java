@@ -8,7 +8,7 @@ import java.awt.*;
 
 
 
-public class Scorpion2 extends CharlieBot{
+public class Scorpion extends CharlieBot{
 	Random randomNum=new Random();
 
 	public void run() {
