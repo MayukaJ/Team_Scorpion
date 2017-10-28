@@ -43,7 +43,15 @@ public class Scorpion extends AlphaBot{
 	 */
 	public void onScannedRobot(ScannedRobotEvent e) {
 	
-		fire(3);
+		if (e.getDistance() < 50) {
+           fire(5);
+       } else if (e.getDistance() < 100){
+           fire(4);
+       } else if (e.getDistance() < 200){
+           fire(3);
+       } else if (e.getDistance() < 400){
+           fire(2);
+       } 
 	}
 
 	/**
