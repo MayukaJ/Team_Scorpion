@@ -8,12 +8,12 @@ import java.awt.*;
 
 
 
-public class Scorpion extends AlphaBot{
+public class Scorpion extends BravoBot{
 	Random randomNum=new Random();
 
 	public void run() {
 		// Set colors
-		setBodyColor(Color.blue);
+		setBodyColor(Color.white);
 		setGunColor(Color.blue);
 		setRadarColor(Color.black);
 		setScanColor(Color.yellow);
@@ -21,14 +21,13 @@ public class Scorpion extends AlphaBot{
 		double FHeight=getBattleFieldHeight();
 		// Loop forever
 		while (getOthers()>3) {
-			turnRight(80+randomNum.nextInt(100));
-			System.out.println(80+randomNum.nextInt(80));
+			turnRight(70+randomNum.nextInt(40));
 			ahead(5000);
 		}
 		while (getOthers()<4) {
-			turnRight(70);
+			turnRight(50);
 			ahead(5000);
-			turnRight(90);
+			turnRight(70);
 			ahead(5000);
 		}
 	}
@@ -50,7 +49,7 @@ public class Scorpion extends AlphaBot{
 	public void onHitByBullet(HitByBulletEvent e){
 		double BHead=e.getHeading();
 		if(getHeading()-BHead>-30 && getHeading()-BHead<30){
-			turnRight(120);
+			turnRight(60);
 			System.out.println("hit");
 		}
 	}
@@ -72,7 +71,8 @@ public class Scorpion extends AlphaBot{
 
 	public void onHitWall(HitWallEvent e){
 		double head=getHeading();
-		turnRight(90-(head%90)+30);
+		turnRight(10);
+		System.out.println("wall");
 	}
 	
 }
