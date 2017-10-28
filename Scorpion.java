@@ -21,13 +21,13 @@ public class Scorpion extends BravoBot{
 		double FHeight=getBattleFieldHeight();
 		// Loop forever
 		while (getOthers()>3) {
-			turnRight(70+randomNum.nextInt(40));
+			turnRight(40+randomNum.nextInt(20));
 			ahead(5000);
 		}
 		while (getOthers()<4) {
 			turnRight(50);
 			ahead(5000);
-			turnRight(70);
+			turnRight(60);
 			ahead(5000);
 		}
 	}
